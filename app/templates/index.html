@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+{%block alert%}
+{{ super() }}
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+	<title>Teste</title>
+	
+</head>
+<body>
+<div>
+{%- for breadcrumb in breadcrumbs -%}
+  <a href="{{ breadcrumb.url }}">{{ breadcrumb.text }}</a>
+  {{ '/' if not loop.last }}
+{%- endfor -%}
+</div>
+
+
+
+    
+        {% for post in posts %}
+        <div class="container"><div class="row"> <div class="col-md-12 offset-md-1">
+          <div class="post-preview">
+            <a href="{{ url_for('post', post_id=post.id) }}">
+              <h2 class="text-secondary">
+                {{ post.title }}</div></div></div>
+              </h2>
+            </a>
+              <div class="container"><div class="row"> <div class="col-md-12 offset-md-1"><span class="badge badge-dark">{{ post.categoria }}</span>
+                <span class="badge badge-secondary">{{post.subcategoria}}</span>
+
+              </div></div></div>
+              <a>
+
+              
+
+
+                
+              
+            </a>
+             <div class="container"><div class="row"> <div class="col-md-12 offset-md-1"><p class="post-meta">Posted by {{ post.username }} on {{ post.date_posted.strftime('%B %d, %Y') }}</p></div></div></div>
+          </div>
+          <hr>
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+
+    
+
+	<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+	<title></title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-light bg-light"> {%block navbar%}
+<span class="navbar-brand mb-0 h1">Navbar</span>
+
+{% endblock %}</nav>
+
+
+
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+</body>
+</html>

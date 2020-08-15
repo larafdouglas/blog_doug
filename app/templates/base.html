@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+
+<title>My Application</title>
+
+
+</head>
+
+
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Douglas</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="col-md-4 offset-md-4">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+
+      <li class="nav-item active">
+
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Curriculum</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Logout</a>
+      </li>
+    </ul>
+  </div></div>
+</nav>
+{%endblock%}
+
+
+
+
+
+	{%block alert%}
+	{% with messages = get_flashed_messages() %}
+ 		{% if messages %}
+ 		<div class="col-md-4 offset-md-4">
+ 		<div class="alert alert-warning"> 
+    		<ul class=flashes>
+    		{% for message in messages %}
+      			<li>{{ message }}</li>
+    		{% endfor %}
+    		</ul>
+ 			</div>
+ 		</div>
+ 		{% endif %}
+	{% endwith %} 
+	{% endblock %}
+
+
+
+
+
+
+
+
+
+<body>
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
+
+
+</body>
+
+</html>
